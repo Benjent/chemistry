@@ -1,0 +1,42 @@
+/****************************** Helpers ******************************/
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/****************************** Components ******************************/
+header #banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #32759B;
+  color: #F7F3ED;
+}
+
+header #forms {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #BBBCBC;
+  color: #F7F3ED;
+}
+
+header #forms form {
+  width: 50%;
+}
+
+/****************************** Pages ******************************/
+#content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
