@@ -1,15 +1,10 @@
 /****************************** Helpers ******************************/
-@import 'helpers/reset.scss';
-@import 'helpers/colors.scss';
-@import 'helpers/values.scss';
-@import 'helpers/font.scss';
-@import 'helpers/helpers.scss';
+@import 'helpers/_reset.scss';
+@import 'helpers/_colors.scss';
+@import 'helpers/_values.scss';
+@import 'helpers/_font.scss';
+@import 'helpers/_helpers.scss';
 
 /****************************** Components ******************************/
-@import 'components/menu.scss';
-@import 'components/help.scss';
-@import 'components/button.scss';
-@import 'components/input.scss';
-@import 'components/modal.scss';
-@import 'components/loading.scss';
-@import 'components/title.scss';
+@import 'components/_header.scss';
+// @import 'components/_help.scss';

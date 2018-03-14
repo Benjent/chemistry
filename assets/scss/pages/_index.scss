@@ -1,0 +1,7 @@
+#content {
+    @include flex-row;
+
+    #people, #profile {
+        // width: 50%;
+    }
+}

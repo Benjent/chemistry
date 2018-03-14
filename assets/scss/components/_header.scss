@@ -1,0 +1,18 @@
+header {
+
+    #banner {
+        @include flex-col;
+        background: $blue;
+        color: $cream;
+    }
+
+    #forms {
+        @include flex-row;
+        background: $grey;
+        color: $cream;
+
+        form {
+            width: 50%;
+        }
+    }
+}
