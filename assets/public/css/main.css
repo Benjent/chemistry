@@ -7,6 +7,25 @@ body {
   padding: 0;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+}
+
 body {
   font-family: 'Timmana', sans-serif;
 }
@@ -24,13 +43,43 @@ header #banner {
   color: #F7F3ED;
 }
 
+header #buttons {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+header #buttons button {
+  width: 150px;
+  height: 40px;
+  color: #F7F3ED;
+  border: solid 3px;
+  border-radius: 20px;
+}
+
+header #buttons #signIn {
+  border-color: #F15A24;
+}
+
+header #buttons #signIn:hover {
+  background: #F15A24;
+}
+
+header #buttons #signUp {
+  border-color: #A1D861;
+}
+
+header #buttons #signUp:hover {
+  background: #A1D861;
+}
+
 header #forms {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px;
-  background: linear-gradient(0.35turn, #F15A24, #8CC63F);
+  background: linear-gradient(0.35turn, #F15A24, #A1D861);
   color: #F7F3ED;
 }
 
@@ -39,10 +88,43 @@ header #forms form {
 }
 
 #people {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: left;
+  flex-flow: row wrap;
   background: #272727;
-  color: #F15A24;
+  color: #F7F3ED;
   width: 50%;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
+}
+
+#people .person {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 20%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#people .person .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  border: solid 3px #F7F3ED;
+  margin-bottom: 5px;
+}
+
+#people .person[selected=selected] {
+  color: #F15A24;
+  border-bottom: solid 3px #F15A24;
+}
+
+#people .person[selected=selected] .avatar {
+  border: solid 3px #F15A24;
 }
 
 #profile {
@@ -55,7 +137,7 @@ header #forms form {
 #profile #img {
   width: 100px;
   height: 100px;
-  background: #8CC63F;
+  background: #A1D861;
   float: left;
   margin: 0 20px 20px 0;
 }
@@ -65,6 +147,7 @@ header #forms form {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  align-items: left;
 }
 
 /****************************** Pages ******************************/

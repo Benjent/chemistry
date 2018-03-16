@@ -7,6 +7,34 @@ header {
         color: $cream;
     }
 
+    #buttons {
+        position: fixed;
+        top: $padding;
+        right: $padding;
+        
+        button {
+            width: 150px;
+            height: 40px;
+            color: $cream;
+            border: solid 3px;
+            border-radius: $br;
+        }
+
+        #signIn {
+            border-color: $orange;
+            &:hover {
+                background: $orange;
+            }
+        }
+
+        #signUp {
+            border-color: $green;
+            &:hover {
+                background: $green;
+            }
+        }
+    }
+
     #forms {
         @include flex-row;
         padding: $padding;

@@ -1,6 +1,33 @@
 #people {
+    @include flex-row;
+    justify-content: left;
+    flex-flow: row wrap;
     background: $dark;
-    color: $orange;
+    color: $cream;
     width: 50%;
-    padding: $padding;
+    padding: 0 $padding $padding $padding;
+
+    .person {
+        @include flex-col;
+        // align-items: flex-start;
+        flex-basis: 20%;
+        margin-top: $padding;
+        text-align: center;
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: $br;
+            border: solid 3px $cream;
+            margin-bottom: 5px;
+        }
+
+        &[selected=selected] {
+            color: $orange;
+            border-bottom: solid 3px $orange;
+
+            .avatar {
+                border: solid 3px $orange;
+            }
+        }
+    }
 }
