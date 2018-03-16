@@ -1,10 +1,11 @@
 /****************************** Helpers ******************************/
-@import 'helpers/_reset.scss';
-@import 'helpers/_colors.scss';
-@import 'helpers/_values.scss';
-@import 'helpers/_font.scss';
-@import 'helpers/_helpers.scss';
+@import 'helpers/reset';
+@import 'helpers/colors';
+@import 'helpers/values';
+@import 'helpers/font';
+@import 'helpers/helpers';
 
 /****************************** Components ******************************/
-@import 'components/_header.scss';
-// @import 'components/_help.scss';
+@import 'components/header';
+@import 'components/people';
+@import 'components/profile';

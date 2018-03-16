@@ -1,0 +1,18 @@
+#profile {
+    background: $dark;
+    color: $orange;
+    width: 50%;
+    padding: $padding;
+
+    #img {
+        width: 100px;
+        height: 100px;
+        background: $green;
+        float: left;
+        margin: 0 $padding $padding 0;
+    }
+
+    #details {
+        @include flex-col;
+    }
+}

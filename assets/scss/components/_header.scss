@@ -1,14 +1,17 @@
 header {
 
+    background: $dark;
+
     #banner {
         @include flex-col;
-        background: $blue;
         color: $cream;
     }
 
     #forms {
         @include flex-row;
-        background: $grey;
+        padding: $padding;
+        
+        background: linear-gradient(0.35turn, $orange, $green);
         color: $cream;
 
         form {

@@ -1,22 +1,26 @@
 /****************************** Helpers ******************************/
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Timmana");
 body {
   margin: 0;
   border: 0;
   padding: 0;
 }
 
-* {
-  font-family: 'Source Sans Pro', sans-serif;
+body {
+  font-family: 'Timmana', sans-serif;
 }
 
 /****************************** Components ******************************/
+header {
+  background: #272727;
+}
+
 header #banner {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: #32759B;
   color: #F7F3ED;
 }
 
@@ -24,8 +28,9 @@ header #forms {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  background: #BBBCBC;
+  align-items: flex-start;
+  padding: 20px;
+  background: linear-gradient(0.35turn, #F15A24, #8CC63F);
   color: #F7F3ED;
 }
 
@@ -33,10 +38,39 @@ header #forms form {
   width: 50%;
 }
 
+#people {
+  background: #272727;
+  color: #F15A24;
+  width: 50%;
+  padding: 20px;
+}
+
+#profile {
+  background: #272727;
+  color: #F15A24;
+  width: 50%;
+  padding: 20px;
+}
+
+#profile #img {
+  width: 100px;
+  height: 100px;
+  background: #8CC63F;
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
+#profile #details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /****************************** Pages ******************************/
 #content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }

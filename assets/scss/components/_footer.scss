@@ -1,0 +1,7 @@
+header {
+
+    @include flex-row;
+    padding: $padding;
+        
+    background: $dark;
+}
