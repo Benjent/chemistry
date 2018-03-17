@@ -12,9 +12,22 @@
         margin: 0 $padding $padding 0;
     }
 
+    label {
+        color: $grey;
+    }
+
+    .value {
+        color: $orange;
+        margin-left: $fieldOffset;
+    }
+
     #details {
         @include flex-col;
         align-items: left;
+    }
+
+    #description {
+        display: inline-block;
     }
 
     form {

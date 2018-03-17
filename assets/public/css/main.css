@@ -108,7 +108,7 @@ select:-moz-focusring {
 
 textarea {
   background: #272727;
-  border-bottom: solid 3px #F15A24;
+  border-bottom: solid 4px #F15A24;
   resize: vertical;
   width: 70%;
   margin: 0 auto;
@@ -120,10 +120,12 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  align-items: stretch;
   background: #272727;
 }
 
 header #banner {
+  text-align: center;
   color: #F7F3ED;
 }
 
@@ -155,11 +157,12 @@ header form {
   justify-content: space-between;
   align-items: flex-start;
   align-items: center;
-  width: 100vw;
   box-sizing: border-box;
   padding: 50px;
   background: linear-gradient(0.35turn, #F15A24, #A1D861);
   color: #F7F3ED;
+  border-top: solid 4px #A1D861;
+  border-bottom: solid 4px #F15A24;
 }
 
 header form .wrapper {
@@ -185,7 +188,9 @@ footer {
   justify-content: space-between;
   align-items: flex-start;
   padding: 50px;
+  color: #F15A24;
   background: #272727;
+  border-bottom: solid 4px #F15A24;
 }
 
 #people {
@@ -221,11 +226,14 @@ footer {
 
 #people .person[selected=selected] {
   color: #F15A24;
-  border-bottom: solid 3px #F15A24;
+  border-bottom: solid 4px #F15A24;
 }
 
 #people .person[selected=selected] .avatar {
-  border: solid 3px #F15A24;
+  border-bottom: solid 4px #F15A24;
+  border-top: solid 4px #A1D861;
+  border-right: solid 4px #A1D861;
+  border-left: solid 4px #A1D861;
 }
 
 #profile {
@@ -243,12 +251,25 @@ footer {
   margin: 0 50px 50px 0;
 }
 
+#profile label {
+  color: #9A9A9A;
+}
+
+#profile .value {
+  color: #F15A24;
+  margin-left: 10px;
+}
+
 #profile #details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   align-items: left;
+}
+
+#profile #description {
+  display: inline-block;
 }
 
 #profile form {

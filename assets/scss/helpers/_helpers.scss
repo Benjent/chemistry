@@ -12,6 +12,18 @@
     align-items: center;
 }
 
+@mixin border ($side, $color) {
+    @if $side == top {
+        border-top: solid 4px $color;
+    } @else if $side == right {
+        border-right: solid 4px $color;
+    } @else if $side == bottom {
+        border-bottom: solid 4px $color;
+    } @else {
+        border-left: solid 4px $color;
+    }
+}
+
 .hidden {
     display: none !important;
 }

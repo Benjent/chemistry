@@ -1,10 +1,11 @@
 header {
 
     @include flex-col;
+    align-items: stretch;
     background: $dark;
 
     #banner {
-        // @include flex-col;
+        text-align: center;
         color: $cream;
     }
 
@@ -31,11 +32,12 @@ header {
     form {
         @include flex-row;
         align-items: center;
-        width: 100vw;
         box-sizing: border-box;
         padding: 50px;
         background: linear-gradient(0.35turn, $orange, $green);
         color: $cream;
+        @include border(top, $green);
+        @include border(bottom, $orange);
 
         .wrapper {
             @include flex-row;

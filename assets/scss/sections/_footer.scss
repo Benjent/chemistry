@@ -2,6 +2,7 @@ footer {
 
     @include flex-row;
     padding: $padding;
-        
+    color: $orange;
     background: $dark;
+    @include border(bottom, $orange);
 }

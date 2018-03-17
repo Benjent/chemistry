@@ -23,10 +23,13 @@
 
         &[selected=selected] {
             color: $orange;
-            border-bottom: solid 3px $orange;
+            @include border(bottom, $orange);
 
             .avatar {
-                border: solid 3px $orange;
+                @include border(bottom, $orange);
+                @include border(top, $green);
+            @include border(right, $green);
+            @include border(left, $green);
             }
         }
     }

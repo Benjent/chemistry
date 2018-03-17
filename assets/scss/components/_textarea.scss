@@ -1,6 +1,6 @@
 textarea {
     background: $dark;
-    border-bottom: solid 3px $orange;
+    @include border(bottom, $orange);
     resize: vertical;
     width: 70%;
     margin: 0 auto;
