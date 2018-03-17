@@ -7,6 +7,10 @@ body {
   padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -26,35 +30,107 @@ button {
   padding: 0;
 }
 
+input, input[type=radio], input[type=checkbox] {
+  border: none;
+}
+
+select {
+  border: none;
+}
+
+textarea {
+  border: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
 body {
   font-family: 'Timmana', sans-serif;
 }
 
 /****************************** Components ******************************/
-header {
-  background: #272727;
-}
-
-header #banner {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  color: #F7F3ED;
-}
-
-header #buttons {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-}
-
-header #buttons button {
+button {
   width: 150px;
   height: 40px;
   color: #F7F3ED;
   border: solid 3px;
   border-radius: 20px;
+}
+
+input {
+  border-radius: 20px;
+  background: #272727;
+  color: #F7F3ED;
+  height: 30px;
+  padding: 5px 10px;
+}
+
+input::placeholder {
+  color: #787878;
+}
+
+.radio {
+  display: block;
+  height: 8px;
+  width: 8px;
+  background-color: #272727;
+  border-radius: 20px;
+  border: solid 10px #272727;
+  margin-left: 10px;
+}
+
+.radio:hover {
+  background: #F15A24;
+}
+
+select {
+  background: #272727;
+  color: #9A9A9A;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-left: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #F15A24 50%), linear-gradient(135deg, #F15A24 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 5px), calc(100% - 15px) calc(1em + 5px);
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+textarea {
+  background: #272727;
+  border-bottom: solid 3px #F15A24;
+  resize: vertical;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/****************************** Sections ******************************/
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #272727;
+}
+
+header #banner {
+  color: #F7F3ED;
+}
+
+header #buttons {
+  position: fixed;
+  top: 28px;
+  right: 20px;
 }
 
 header #buttons #signIn {
@@ -73,18 +149,43 @@ header #buttons #signUp:hover {
   background: #A1D861;
 }
 
-header #forms {
+header form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px;
+  align-items: center;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 50px;
   background: linear-gradient(0.35turn, #F15A24, #A1D861);
   color: #F7F3ED;
 }
 
-header #forms form {
-  width: 50%;
+header form .wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-items: center;
+}
+
+header form .wrapper label {
+  margin-left: 50px;
+}
+
+header form button:hover {
+  background: #F15A24;
+  border-color: #F15A24;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px;
+  background: #272727;
 }
 
 #people {
@@ -94,10 +195,10 @@ header #forms form {
   align-items: flex-start;
   justify-content: left;
   flex-flow: row wrap;
-  background: #272727;
+  background: #1d1d1d;
   color: #F7F3ED;
   width: 50%;
-  padding: 0 20px 20px 20px;
+  padding: 0 50px 50px 50px;
 }
 
 #people .person {
@@ -106,7 +207,7 @@ header #forms form {
   justify-content: space-between;
   align-items: center;
   flex-basis: 20%;
-  margin-top: 20px;
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -128,10 +229,10 @@ header #forms form {
 }
 
 #profile {
-  background: #272727;
+  background: #1d1d1d;
   color: #F15A24;
   width: 50%;
-  padding: 20px;
+  padding: 50px;
 }
 
 #profile #img {
@@ -139,7 +240,7 @@ header #forms form {
   height: 100px;
   background: #A1D861;
   float: left;
-  margin: 0 20px 20px 0;
+  margin: 0 50px 50px 0;
 }
 
 #profile #details {
@@ -148,6 +249,13 @@ header #forms form {
   justify-content: space-between;
   align-items: center;
   align-items: left;
+}
+
+#profile form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /****************************** Pages ******************************/

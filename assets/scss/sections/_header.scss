@@ -1,0 +1,58 @@
+header {
+
+    @include flex-col;
+    background: $dark;
+
+    #banner {
+        // @include flex-col;
+        color: $cream;
+    }
+
+    #buttons {
+        position: fixed;
+        top: 28px;
+        right: 20px;
+
+        #signIn {
+            border-color: $orange;
+            &:hover {
+                background: $orange;
+            }
+        }
+
+        #signUp {
+            border-color: $green;
+            &:hover {
+                background: $green;
+            }
+        }
+    }
+
+    form {
+        @include flex-row;
+        align-items: center;
+        width: 100vw;
+        box-sizing: border-box;
+        padding: 50px;
+        background: linear-gradient(0.35turn, $orange, $green);
+        color: $cream;
+
+        .wrapper {
+            @include flex-row;
+            align-items: center;
+            // margin-left: 100px;
+
+            label {
+                margin-left: $padding;
+            }
+        }
+
+        button {
+            // margin-left: 100px;
+            &:hover {
+                background: $orange;
+                border-color: $orange;
+            }
+        }
+    }
+}

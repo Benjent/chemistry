@@ -1,0 +1,30 @@
+input {
+    border-radius: $br;
+    background: $dark;
+    color: $cream;
+    height: $fieldHeight;
+    padding: 5px 10px;
+
+    &::placeholder {
+        color: $darkgrey;
+    }
+
+    // &[type=checkbox],
+    // &[type=radio] {
+    //     opacity: 0;
+    // }
+}
+
+.radio {
+    display: block;
+    height: 8px;
+    width: 8px;
+    background-color: $dark;
+    border-radius: $br;
+    border: solid 10px $dark;
+    margin-left: $fieldOffset; // Space from the label
+
+    &:hover {
+        background: $orange;
+    }
+}

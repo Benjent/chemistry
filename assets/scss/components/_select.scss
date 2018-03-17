@@ -1,0 +1,33 @@
+select {
+    background: $dark;
+    color: $grey;
+    height: $fieldHeight + 10px; // seems like vertical padding does not work
+    padding: 5px 10px;
+    border-radius: $br;
+    margin-left: $fieldOffset; // Space from the label
+    -webkit-appearance: none;  
+    -moz-appearance: none; 
+    appearance: none;
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, $orange 50%),
+        linear-gradient(135deg, $orange 50%, transparent 50%);
+        // linear-gradient(to right, $darkgrey, $darkgrey);
+    background-position:
+        calc(100% - 20px) calc(1em + 5px), // Change last parameter to set the height of the arrow : 5px
+        calc(100% - 15px) calc(1em + 5px); // Change last parameter to set the height of the arrow : 5px
+        // calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+
+  

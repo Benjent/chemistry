@@ -4,6 +4,10 @@ body {
     padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
 ul {
     margin: 0;
     padding: 0;
@@ -21,4 +25,16 @@ button {
     line-height: normal;
     overflow: visible;
     padding: 0;
+}
+
+input, input[type=radio], input[type=checkbox] {
+    border: none;
+}
+
+select {
+    border: none;
+}
+
+textarea {
+    border: none;
 }

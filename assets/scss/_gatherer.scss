@@ -6,6 +6,13 @@
 @import 'helpers/helpers';
 
 /****************************** Components ******************************/
-@import 'components/header';
-@import 'components/people';
-@import 'components/profile';
+@import 'components/button';
+@import 'components/input';
+@import 'components/select';
+@import 'components/textarea';
+
+/****************************** Sections ******************************/
+@import 'sections/header';
+@import 'sections/footer';
+@import 'sections/people';
+@import 'sections/profile';

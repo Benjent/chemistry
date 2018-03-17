@@ -1,5 +1,5 @@
 #profile {
-    background: $dark;
+    background: $black;
     color: $orange;
     width: 50%;
     padding: $padding;
@@ -15,5 +15,9 @@
     #details {
         @include flex-col;
         align-items: left;
+    }
+
+    form {
+        @include flex-col;
     }
 }
