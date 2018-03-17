@@ -10,31 +10,47 @@
         <button id="signUp">Sign up</button>
     </div>
 
-    <div id="forms">
-        <form action="/signUp" method="POST">
-            <h2>Look for musicians</h2>
-            <div></div>
-            <input type="text" placeholder="firstName" name="firstName">
-            <input type="text" placeholder="birthDate" name="birthDate">
+        <form action="/look" method="POST">
+
+            <div id="typeOfSearchWrapper" class="wrapper">
+                <h2>Look for</h2>
+
+                <label for="peopleRadio">People</label>
+                <span class="radio">
+                    <input type="radio" id="peopleRadio" class="hidden" name="peopleOrAd" value="people">
+                </span>
+
+                <label for="adRadio">Ads</label>
+                <span class="radio">
+                    <input type="radio" id="adRadio" class="hidden" name="peopleOrAd" value="ad">
+                </span>
+            </div>
+
+            <div id="countyWrapper" class="wrapper">
+                {{!-- <label for="county">County</label> --}}
+                <h2>County</h2>
+                <select name="county" id="county">
+                    {{#each counties}}
+                        <option value="{{@index}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            {{!-- <input type="text" placeholder="firstName" name="firstName">
+            <input type="text" placeholder="birthDate" name="birthDate"> --}}
+            
+            <div id="instrumentsWrapper" class="wrapper">
+                <h2>Instruments</h2>
+                {{#each instruments}}
+                <label for="{{this}}">{{this}}</label>
+                <span class="radio">
+                    <input type="checkbox" id="{{this}}" class="hidden" name="instruments" value="{{this}}">
+                </span>
+                {{/each}}
+            </div>
+
             <button type="submit">Submit</button>
 
-            <label for="county">County</label>
-            <select name="county" id="county">
-                {{#each counties}}
-                    <option value="{{@index}}">{{this}}</option>
-                {{/each}}
-            </select>
-            <div class="instruments">
-                <input type="checkbox" id="singer" name="instruments" value="singer">
-                <input type="checkbox" id="guitar" name="instruments" value="guitar">
-                <input type="checkbox" id="bassGuitar" name="instruments" value="bassGuitar">
-                <input type="checkbox" id="drums" name="instruments" value="drums">
-                <input type="checkbox" id="piano" name="instruments" value="piano">
-                <input type="checkbox" id="synthetiser" name="instruments" value="synthetiser">
-            </div>
-        </form>
-        <form action="">
-            <h2>Look for ads</h2>
         </form>
     </div>
 </header>
