@@ -43,7 +43,7 @@ mongo.connect('mongodb://localhost:27017/chemistry', function(err, client) {
     db.collection('users').insertOne(
         {
             firstName: "Benjamin",
-            birthName: 23
+            birthDate: 23
         }
     )
     // db.myNewCollection3.createIndex( { y: 1 } )
