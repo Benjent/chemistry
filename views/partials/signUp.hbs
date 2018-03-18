@@ -1,0 +1,37 @@
+<section id="signUpModal" class="modal" state="closed">
+
+    <div class="closer" onclick="toggleElement('signUpModal','close')">X</div>
+
+    <form action="/signUp" method="POST">
+
+        <div class="formLeft">
+            <div class="wrapper">
+                <label for="signUpFirstName">Name</label>
+                <input id="signUpFirstName" type="text" placeholder="firstName" name="firstName" value="User Placeholder">
+            </div>
+
+            <div class="wrapper">
+                <label for="signUpEmail">Email</label>
+                <input id="signUpEmail" type="text" placeholder="email" name="email" value="benjent@hotmail.fr">
+            </div>
+
+            <div class="wrapper">
+                <label for="signUpPassword">Password</label>
+                <input id="signUpPassword" type="password" name="password" required onkeyup="checkPasswordSimilarity()">
+            </div>
+
+            <div class="wrapper">
+                <label for="signUpConfirmPassword">Password</label>
+                <input id="signUpConfirmPassword" type="password" name="confirmPassword" required onkeyup="checkPasswordSimilarity()">
+            </div>
+        </div>
+
+        <div class="formRight">
+            <span id="signUpMessage"></span>
+            <button type="submit">Submit</button>
+        </div>
+
+
+    </form>
+
+</section>
