@@ -43,10 +43,12 @@ mongo.connect('mongodb://localhost:27017/chemistry', function(err, client) {
     db.collection('users').insertOne(
         {
             firstName: "Benjamin",
-            birthDate: 23
+            birthDate: 23,
+            location: 21,
+            instruments: ["Guitar", "Bass guitar", "Drums", "Singer"],
+            description: "I am the creator of this webapp, feel free to contact me!"
         }
     )
-    // db.myNewCollection3.createIndex( { y: 1 } )
 
     db.collection('users').find().toArray(function(err, result) {
         if (err) {
@@ -55,6 +57,15 @@ mongo.connect('mongodb://localhost:27017/chemistry', function(err, client) {
         console.log(result);
     });
 });
+
+app.post('/editProfile', (req, res) => {
+    db.collection('users').save(req.body, (err, result) => {
+        if (err) return console.log(err)
+    
+        console.log(req.body, 'saved to database')
+        res.redirect('/')
+      })
+})
 
 app.post('/signUp', (req, res) => {
     db.collection('users').save(req.body, (err, result) => {

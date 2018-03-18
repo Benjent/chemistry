@@ -1,0 +1,33 @@
+<section id="myProfile" state="closed">
+
+    <div class="closer" onclick="toggleElement('myProfile','close')">X</div>
+
+    <div id="img">this is a picture</div>
+
+    <div id="details">
+        <div>
+            <label>Name</label><span class="value">Nom</span>
+        </div>
+        <div>
+            <label>Age</label><span class="value">age</span>
+        </div>
+        <div>
+            <label>City</label><span class="value">ville</span>
+        </div>
+    </div>
+    <div>
+        <label>Instruments</label><span class="value">list d'instrus</span>
+    </div>
+    <div>
+        <label>Description</label><p id="description" class="value">blabla</p>
+    </div>
+
+    <form action="/editProfile" method="POST">
+
+        <input type="text" placeholder="firstName" name="firstName" value="User Placeholder">
+        <input type="text" placeholder="birthDate" name="birthDate" value="40">
+        <button type="submit">Submit</button>
+
+    </form>
+
+</section>

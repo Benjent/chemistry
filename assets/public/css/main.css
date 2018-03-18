@@ -125,29 +125,39 @@ header {
 }
 
 header #banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-items: center;
   text-align: center;
+  height: 70px;
   color: #F7F3ED;
+  padding: 10px 50px;
 }
 
-header #buttons {
-  position: fixed;
-  top: 28px;
-  right: 20px;
+header #banner #title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 3;
 }
 
-header #buttons #signIn {
+header #banner #buttons #signIn {
   border-color: #F15A24;
 }
 
-header #buttons #signIn:hover {
+header #banner #buttons #signIn:hover {
   background: #F15A24;
 }
 
-header #buttons #signUp {
+header #banner #buttons #signUp {
   border-color: #A1D861;
 }
 
-header #buttons #signUp:hover {
+header #banner #buttons #signUp:hover {
   background: #A1D861;
 }
 
@@ -183,6 +193,9 @@ header form button:hover {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -273,6 +286,73 @@ footer {
 }
 
 #profile form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#myProfile {
+  position: absolute;
+  z-index: 1;
+  left: 20vw;
+  box-sizing: border-box;
+  background: #1d1d1d;
+  background: linear-gradient(0.35turn, #F15A24, #A1D861);
+  box-shadow: -1px 2px 10px 3px #272727;
+  color: #F15A24;
+  width: 60vw;
+  height: 60vh;
+  padding: 50px;
+  transition-property: top;
+  transition-duration: 0.3s;
+}
+
+#myProfile[state=open] {
+  top: 20vh;
+}
+
+#myProfile[state=closed] {
+  top: -100vh;
+}
+
+#myProfile .closer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #F7F3ED;
+}
+
+#myProfile #img {
+  width: 100px;
+  height: 100px;
+  background: #A1D861;
+  float: left;
+  margin: 0 50px 50px 0;
+}
+
+#myProfile label {
+  color: #272727;
+}
+
+#myProfile .value {
+  color: #F7F3ED;
+  margin-left: 10px;
+}
+
+#myProfile #details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-items: left;
+}
+
+#myProfile #description {
+  display: inline-block;
+}
+
+#myProfile form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

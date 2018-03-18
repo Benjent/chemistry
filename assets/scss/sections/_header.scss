@@ -5,26 +5,37 @@ header {
     background: $dark;
 
     #banner {
+        @include flex-row;
+        align-items: center;
         text-align: center;
+        height: 70px;
         color: $cream;
-    }
+        padding: 10px $padding;
+        // position: fixed;
 
-    #buttons {
-        position: fixed;
-        top: 28px;
-        right: 20px;
-
-        #signIn {
-            border-color: $orange;
-            &:hover {
-                background: $orange;
-            }
+        #title {
+            @include flex-row;
+            justify-content: center;
+            flex: 3;
         }
 
-        #signUp {
-            border-color: $green;
-            &:hover {
-                background: $green;
+        #buttons {
+            // position: fixed;
+            // top: 28px;
+            // right: 20px;
+    
+            #signIn {
+                border-color: $orange;
+                &:hover {
+                    background: $orange;
+                }
+            }
+    
+            #signUp {
+                border-color: $green;
+                &:hover {
+                    background: $green;
+                }
             }
         }
     }
@@ -34,7 +45,7 @@ header {
         align-items: center;
         box-sizing: border-box;
         padding: 50px;
-        background: linear-gradient(0.35turn, $orange, $green);
+        @include gradient-bg;
         color: $cream;
         @include border(top, $green);
         @include border(bottom, $orange);

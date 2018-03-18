@@ -24,6 +24,15 @@
     }
 }
 
+@mixin gradient-bg() {
+    background: linear-gradient(0.35turn, $orange, $green);
+}
+
+@mixin shadow($color: $dark) {
+	box-shadow: -1px 2px 10px 3px $color;
+	// TODO create a shadow propagation var
+}
+
 .hidden {
     display: none !important;
 }
