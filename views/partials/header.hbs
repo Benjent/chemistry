@@ -7,13 +7,17 @@
         </div>
         
         <div id="buttons">
-            <button id="showMyProfile" onclick="toggleElement('myProfile','open')">My profile</button>
+            <button id="showMyProfile" onclick="toggleElement('myProfileModal','open')">My profile</button>
             <button id="signIn">Sign in</button>
-            <button id="signUp">Sign up</button>
+            <button id="signUp" onclick="toggleElement('signUpModal','open')">Sign up</button>
         </div>
     </div>
 
-    <form action="/look" method="POST">
+    {{> myProfile }}
+    {{> signIn }}
+    {{> signUp }}
+
+    <form id="mainForm" action="/look" method="POST">
 
         <div id="typeOfSearchWrapper" class="wrapper">
             <h2>Look for</h2>

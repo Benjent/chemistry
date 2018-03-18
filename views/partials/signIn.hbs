@@ -1,0 +1,21 @@
+<section id="signInModal" class="modal" state="closed">
+
+    <div class="closer" onclick="toggleElement('signInModal','close')">X</div>
+
+    <form action="/signIn" method="POST">
+
+        <div class="wrapper">
+            <label for="userPassword">Email</label>
+            <input type="text" placeholder="email" name="email" value="benjent@hotmail.fr">
+        </div>
+
+        <div class="wrapper">
+            <label for="password">Password</label>
+            <input type="password" required>
+        </div>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</section>

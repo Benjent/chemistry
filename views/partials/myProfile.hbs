@@ -1,6 +1,6 @@
-<section id="myProfile" state="closed">
+<section id="myProfileModal" class="modal" state="closed">
 
-    <div class="closer" onclick="toggleElement('myProfile','close')">X</div>
+    <div class="closer" onclick="toggleElement('myProfileModal','close')">X</div>
 
     <div id="img">this is a picture</div>
 
@@ -21,13 +21,5 @@
     <div>
         <label>Description</label><p id="description" class="value">blabla</p>
     </div>
-
-    <form action="/editProfile" method="POST">
-
-        <input type="text" placeholder="firstName" name="firstName" value="User Placeholder">
-        <input type="text" placeholder="birthDate" name="birthDate" value="40">
-        <button type="submit">Submit</button>
-
-    </form>
 
 </section>

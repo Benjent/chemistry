@@ -1,0 +1,31 @@
+.modal {
+    position: absolute;
+    z-index: 1;
+    left: 50vw - (0.5 * $modalWidth);
+    box-sizing: border-box;
+    background: $black;
+    @include gradient-bg;
+    @include shadow;
+    $color: cream;
+    width: 60vw;
+    height: 60vh;
+    padding: $padding;
+    
+    transition-property: top;
+    transition-duration: 0.3s;
+
+    &[state=open] {
+        top: 20vh;
+    }
+
+    &[state=closed] {
+        top: - $modalHeight - (100vh - $modalHeight);
+    }
+
+    .closer {
+        position: absolute;
+        top: $offset;
+        right: $offset;
+        color: $cream;
+    }
+}

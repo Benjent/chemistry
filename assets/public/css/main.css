@@ -114,6 +114,36 @@ textarea {
   margin: 0 auto;
 }
 
+.modal {
+  position: absolute;
+  z-index: 1;
+  left: 20vw;
+  box-sizing: border-box;
+  background: #1d1d1d;
+  background: linear-gradient(0.35turn, #F15A24, #A1D861);
+  box-shadow: -1px 2px 10px 3px #272727;
+  width: 60vw;
+  height: 60vh;
+  padding: 50px;
+  transition-property: top;
+  transition-duration: 0.3s;
+}
+
+.modal[state=open] {
+  top: 20vh;
+}
+
+.modal[state=closed] {
+  top: -100vh;
+}
+
+.modal .closer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #F7F3ED;
+}
+
 /****************************** Sections ******************************/
 header {
   display: flex;
@@ -134,6 +164,8 @@ header #banner {
   height: 70px;
   color: #F7F3ED;
   padding: 10px 50px;
+  box-shadow: -1px 2px 10px 3px #272727;
+  z-index: 1;
 }
 
 header #banner #title {
@@ -161,7 +193,7 @@ header #banner #buttons #signUp:hover {
   background: #A1D861;
 }
 
-header form {
+header #mainForm {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -171,11 +203,10 @@ header form {
   padding: 50px;
   background: linear-gradient(0.35turn, #F15A24, #A1D861);
   color: #F7F3ED;
-  border-top: solid 4px #A1D861;
   border-bottom: solid 4px #F15A24;
 }
 
-header form .wrapper {
+header #mainForm .wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -183,11 +214,11 @@ header form .wrapper {
   align-items: center;
 }
 
-header form .wrapper label {
+header #mainForm .wrapper label {
   margin-left: 50px;
 }
 
-header form button:hover {
+header #mainForm button:hover {
   background: #F15A24;
   border-color: #F15A24;
 }
@@ -292,38 +323,7 @@ footer {
   align-items: center;
 }
 
-#myProfile {
-  position: absolute;
-  z-index: 1;
-  left: 20vw;
-  box-sizing: border-box;
-  background: #1d1d1d;
-  background: linear-gradient(0.35turn, #F15A24, #A1D861);
-  box-shadow: -1px 2px 10px 3px #272727;
-  color: #F15A24;
-  width: 60vw;
-  height: 60vh;
-  padding: 50px;
-  transition-property: top;
-  transition-duration: 0.3s;
-}
-
-#myProfile[state=open] {
-  top: 20vh;
-}
-
-#myProfile[state=closed] {
-  top: -100vh;
-}
-
-#myProfile .closer {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: #F7F3ED;
-}
-
-#myProfile #img {
+#myProfileModal #img {
   width: 100px;
   height: 100px;
   background: #A1D861;
@@ -331,16 +331,16 @@ footer {
   margin: 0 50px 50px 0;
 }
 
-#myProfile label {
+#myProfileModal label {
   color: #272727;
 }
 
-#myProfile .value {
+#myProfileModal .value {
   color: #F7F3ED;
   margin-left: 10px;
 }
 
-#myProfile #details {
+#myProfileModal #details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -348,11 +348,11 @@ footer {
   align-items: left;
 }
 
-#myProfile #description {
+#myProfileModal #description {
   display: inline-block;
 }
 
-#myProfile form {
+#myProfileModal form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

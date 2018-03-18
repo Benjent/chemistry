@@ -12,6 +12,8 @@ header {
         color: $cream;
         padding: 10px $padding;
         // position: fixed;
+        @include shadow;
+        z-index: 1;
 
         #title {
             @include flex-row;
@@ -40,14 +42,14 @@ header {
         }
     }
 
-    form {
+    #mainForm {
         @include flex-row;
         align-items: center;
         box-sizing: border-box;
         padding: 50px;
         @include gradient-bg;
         color: $cream;
-        @include border(top, $green);
+        // @include border(top, $green);
         @include border(bottom, $orange);
 
         .wrapper {
