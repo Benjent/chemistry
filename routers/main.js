@@ -5,55 +5,6 @@ const app = express()
 const bodyParser = require('body-parser')
 var db = null;
 
-// // POST handler
-// app.use(bodyParser.urlencoded({extended: true}))
-
-// // Database
-// mongo.connect('mongodb://localhost:27017/chemistry', function(err, client) {
-//     if (err) {
-//         throw err;
-//     }
-
-//     db = client.db("chemistry");
-
-//     db.collection('users').insertOne(
-//         {
-//             firstName: "Benjamin",
-//             birthDate: 23,
-//             location: 21,
-//             instruments: ["Guitar", "Bass guitar", "Drums", "Singer"],
-//             description: "I am the creator of this webapp, feel free to contact me!"
-//         }
-//     )
-
-//     db.collection('users').find().toArray(function(err, result) {
-//         if (err) {
-//         throw err;
-//         }
-//         console.log(result);
-//     });
-// });
-
-// // CRUD
-// app.post('/editProfile', (req, res) => {
-//     console.log(db)
-//     db.collection('users').save(req.body, (err, result) => {
-//         if (err) return console.log(err)
-    
-//         console.log('saved to database')
-//         res.redirect('/')
-//       })
-// })
-
-// app.post('/signUp', (req, res) => {
-//     db.collection('users').save(req.body, (err, result) => {
-//         if (err) return console.log(err)
-    
-//         console.log('saved to database')
-//         res.redirect('/')
-//       })
-// })
-
 // Router
 router.get('/', (req, res) => {
     // Generate form

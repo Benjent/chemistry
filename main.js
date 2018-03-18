@@ -3,16 +3,14 @@ const http = require("http");
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongo = require('mongodb').MongoClient;
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const SALT_WORK_FACTOR = 10;
+
 const path = require('path')
 const hbs = require('hbs');
 
 // App setup
 const app = express()
 const port = 8081;
-var db = null;
+// var db = null;
 
 // Routers
 const mainRouter = require('./routers/main')
@@ -35,52 +33,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 // app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log('Example app listening on port ' + port + '! Go to http://127.0.0.1:' + port + '/'))
 
+const db = require('./modules/database.js');
 
 
-mongoose.connect('mongodb://localhost:27017/chemistry');
-var db = mongoose.connection;
-
-db.on('error', function(err){
-    console.log('connection error', err);
-});
-
-db.once('open', function(){
-    console.log('Connection to DB successful');
-});
-
-var Schema = mongoose.Schema;
-var mySchema = new Schema({
-    name:String,
-    password:String
-});
-
-var User = mongoose.model('User', mySchema);
-
-mySchema.pre('save', function(next){
-    var user = this;
-    if (!user.isModified('password')) return next();
-
-    bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
-        if(err) return next(err);
-
-        bcrypt.hash(user.password, salt, function(err, hash){
-            if(err) return next(err);
-
-            user.password = hash;
-            next();
-        });
-    });
-});
-
-var testdata = new User({
-    name: "admin",
-    password: "test123"
-});
- 
-testdata.save(function(err, data){
-    if(err) console.log(error);
-    else console.log ('Success:' , data);
-});
 
 // Database
 // mongo.connect('mongodb://localhost:27017/chemistry', function(err, client) {
