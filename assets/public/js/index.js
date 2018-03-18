@@ -8,6 +8,11 @@ function Profile(details) {
 
 function checkPasswordSimilarity() {
 
-    document.querySelector("#signUpMessage").innerHTML = document.querySelector("#signUpPassword").value != document.querySelector("#signUpConfirmPassword").value ? "Passwords don't match." : "";
+    // document.querySelector("#signUpMessage").innerHTML = document.querySelector("#signUpPassword").value != document.querySelector("#signUpConfirmPassword").value ? "Passwords don't match." : "";
+    if(document.querySelector("#signUpPassword").value != document.querySelector("#signUpConfirmPassword").value) {
+        document.querySelector("#signUpMessage").style.visibility = "visible";
+    } else {
+        document.querySelector("#signUpMessage").style.visibility = "hidden";
+    }
 
 }
