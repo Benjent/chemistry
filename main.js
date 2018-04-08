@@ -110,6 +110,21 @@ app.post('/signUp', (req, res) => {
     })
 })
 
+app.post('/signIn', (req, res) => {
+
+    db.collection('users').findOne({userName: req.body.userName, password: req.body.password}, function(err, result) {
+        if (err) throw err;
+
+        if(result) {
+            console.log(req.body.userName, 'successfully signed in')
+            res.redirect('/')
+        } else {
+            console.log(req.body, 'username or password missmatch')
+            res.redirect('/')
+        }
+    })
+})
+
 app.get('/clean', (req, res) => {
     // Dev purposes
     db.collection('users').remove({})

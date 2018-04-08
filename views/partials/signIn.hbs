@@ -4,17 +4,24 @@
 
     <form action="/signIn" method="POST">
 
-        <div class="wrapper">
-            <label for="userPassword">Email</label>
-            <input type="text" placeholder="email" name="email" value="benjent@hotmail.fr">
+        <div class="formLeft">
+            <div class="wrapper">
+                <label for="signInUserName">Name</label>
+                <input id="signInUserName" type="text" placeholder="userName" name="userName" value="User Placeholder" required>
+            </div>
+
+            <div class="wrapper">
+                <label for="signInPassword">Password</label>
+                <input id="signInPassword" type="password" name="password" required>
+            </div>
+
         </div>
 
-        <div class="wrapper">
-            <label for="password">Password</label>
-            <input type="password" required>
-        </div>
+        <div class="separator"></div>
 
-        <button type="submit">Submit</button>
+        <div class="formRight">
+            <button type="submit">Submit</button>
+        </div>
 
     </form>
 
