@@ -1,13 +1,17 @@
-<section id="message" class="modal" state="closed">
 
-    <div class="closer" onclick="toggleElement('message','close')">X</div>
+{{#if message}}
+    {{!-- <section id="message" class="modal" state="closed"> --}}
+    <section id="message" class="modal" >
 
-    {{#if message}}
-        <h2>LOL</h2>
-    {{/if}}
+        <div class="closer" onclick="toggleElement('message','close')">X</div>
 
-    <p>
-        I should put here the content of the message.
-    </p>
+        
+            <h2>{{message}}</h2>
+        
 
-</section>
+        <p>
+            I should put here the content of the message.
+        </p>
+
+    </section>
+{{/if}}

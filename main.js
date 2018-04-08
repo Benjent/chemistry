@@ -83,52 +83,65 @@ const db = require('./modules/database')
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.post('/editProfile', (req, res) => {
+    var data = {}
+    
     db.collection('users').save(req.body, (err, result) => {
         if (err) return console.log(err)
     
         console.log(req.body, 'saved to database')
-        res.redirect('/')
-      })
+    })
+
+    res.render('index', data);
 })
 
 app.post('/signUp', (req, res) => {
+
+    let data = {}
 
     db.collection('users').findOne({userName: req.body.userName}, function(err, result) {
         if (err) throw err;
 
         if(result) {
             console.log(req.body.userName, 'userName already taken')
-            res.redirect('/')
+            data.message = "userName already taken"
+            res.render('index', data);
         } else {
             db.collection('users').save(req.body, (err, result) => {
                 if (err) return console.log(err)
-            
+                data.message = "successfully signed up"
                 console.log(req.body, 'signUp saved to database')
-                res.redirect('/')
+                res.render('index', data);
             })
         }
     })
+    
 })
 
 app.post('/signIn', (req, res) => {
+    
+    var data = {}
 
     db.collection('users').findOne({userName: req.body.userName, password: req.body.password}, function(err, result) {
         if (err) throw err;
 
         if(result) {
             console.log(req.body.userName, 'successfully signed in')
-            res.redirect('/')
+            // data.message = "Successfully signed in"
+            res.render('index', data);
         } else {
             console.log(req.body, 'username or password missmatch')
-            res.redirect('/')
+            data.message = "Username or password missmatch"
+            res.render('index', data);
         }
     })
 })
 
 app.get('/clean', (req, res) => {
+    var data = {}
+    data.message = "Database flushed"
     // Dev purposes
     db.collection('users').remove({})
-    res.redirect('/')
+    res.render('index', data);
 })
 
 
