@@ -6,13 +6,13 @@
 
         <div class="formLeft">
             <div class="wrapper">
-                <label for="signUpFirstName">Name</label>
-                <input id="signUpFirstName" type="text" placeholder="firstName" name="firstName" value="User Placeholder">
+                <label for="signUpUserName">Name</label>
+                <input id="signUpUserName" type="text" placeholder="userName" name="userName" value="User Placeholder" required>
             </div>
 
             <div class="wrapper">
                 <label for="signUpEmail">Email</label>
-                <input id="signUpEmail" type="text" placeholder="email" name="email" value="benjent@hotmail.fr">
+                <input id="signUpEmail" type="text" placeholder="email" name="email" value="benjent@hotmail.fr" required>
             </div>
 
             <div class="wrapper">
@@ -22,12 +22,14 @@
 
             <div class="wrapper">
                 <label for="signUpConfirmPassword">Password</label>
-                <input id="signUpConfirmPassword" type="password" name="confirmPassword" required onkeyup="checkPasswordSimilarity()">
+                <input id="signUpConfirmPassword" type="password" name="passwordConfirmation" required onkeyup="checkPasswordSimilarity()">
             </div>
         </div>
 
+        <div class="separator"></div>
+
         <div class="formRight">
-            <span id="signUpMessage"></span>
+            <h2 id="signUpMessage">Passwords don't match.</h2>
             <button type="submit">Submit</button>
         </div>
 

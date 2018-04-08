@@ -1,9 +1,11 @@
 // Requirements
 const http = require("http");
 const express = require('express')
-const bodyParser = require('body-parser')
 const mongo = require('mongodb').MongoClient;
-
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const SALT_WORK_FACTOR = 10;
+const bodyParser = require('body-parser')
 const path = require('path')
 const hbs = require('hbs');
 
@@ -26,42 +28,59 @@ app.set('view engine', 'hbs')
 hbs.registerPartials(path.join(__dirname, '/views/partials'))
 app.use(express.static(path.join(__dirname, '/assets/public')))
 
+const db = require('./modules/database')
+// const models = require('./modules/models')
+// const controllers = require('./modules/controllers')
+
+
+// Mongoose but dont use
+
+// let Schema = mongoose.Schema;
+
+// let userSchema = new Schema({
+//     userName: {
+//         type:String,
+//         validate: {
+//             validator: function(v, cb) {
+//                 // User.find({name: v}, function(err,docs){
+//                 //     cb(docs.length == 0);
+//                 // });
+//             },
+//             message: 'User already exists!'
+//         }
+//     },
+//     email:String,
+//     password:String,
+//     birthDate:Date,
+//     location:Number,
+//     instruments:[String],
+//     description:String
+// });
+
+// userSchema.pre('save', function(next){
+//     let user = this;
+//     if (!user.isModified('password')) return next();
+
+//     bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
+//         if(err) return next(err);
+
+//         bcrypt.hash(user.password, salt, function(err, hash){
+//             if(err) return next(err);
+
+//             user.password = hash;
+//             next();
+//         });
+//     });
+
+// });
+
+// let User = mongoose.model('User', userSchema);
+
+
+
+
 // POST handler
 app.use(bodyParser.urlencoded({extended: true}))
-
-// App
-// app.get('/', (req, res) => res.send('Hello World!'))
-app.listen(port, () => console.log('Example app listening on port ' + port + '! Go to http://127.0.0.1:' + port + '/'))
-
-const db = require('./modules/database.js');
-
-
-
-// Database
-// mongo.connect('mongodb://localhost:27017/chemistry', function(err, client) {
-//     if (err) {
-//         throw err;
-//     }
-
-//     db = client.db("chemistry");
-
-//     // db.collection('users').insertOne(
-//     //     {
-//     //         firstName: "Benjamin",
-//     //         birthDate: 23,
-//     //         location: 21,
-//     //         instruments: ["Guitar", "Bass guitar", "Drums", "Singer"],
-//     //         description: "I am the creator of this webapp, feel free to contact me!"
-//     //     }
-//     // )
-
-//     db.collection('users').find().toArray(function(err, result) {
-//         if (err) {
-//             throw err;
-//         }
-
-//     });
-// });
 
 app.post('/editProfile', (req, res) => {
     db.collection('users').save(req.body, (err, result) => {
@@ -73,10 +92,25 @@ app.post('/editProfile', (req, res) => {
 })
 
 app.post('/signUp', (req, res) => {
-    db.collection('users').save(req.body, (err, result) => {
-        if (err) return console.log(err)
-    
-        console.log(req.body, 'saved to database')
-        res.redirect('/')
-      })
+
+    db.collection('users').findOne({userName: req.body.userName}, function(err, result) {
+        if (err) throw err;
+
+        if(result) {
+            console.log(req.body.userName, 'userName already taken')
+            res.redirect('/')
+        } else {
+            db.collection('users').save(req.body, (err, result) => {
+                if (err) return console.log(err)
+            
+                console.log(req.body, 'signUp saved to database')
+                res.redirect('/')
+            })
+        }
+    })
 })
+
+// App
+// app.get('/', (req, res) => res.send('Hello World!'))
+app.listen(port, () => console.log('Example app listening on port ' + port + '! Go to http://127.0.0.1:' + port + '/'))
+

@@ -14,5 +14,4 @@ function checkPasswordSimilarity() {
     } else {
         document.querySelector("#signUpMessage").style.visibility = "hidden";
     }
-
 }
