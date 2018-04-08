@@ -4,4 +4,9 @@ button {
     color: $cream;
     border: solid 3px;
     border-radius: $br;
+
+    &:hover {
+        background: $cream;
+        color: $green;
+    }
 }

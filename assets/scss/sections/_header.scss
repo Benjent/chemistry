@@ -30,6 +30,7 @@ header {
                 border-color: $orange;
                 &:hover {
                     background: $orange;
+                    color: $cream;
                 }
             }
     
@@ -37,6 +38,7 @@ header {
                 border-color: $green;
                 &:hover {
                     background: $green;
+                    color: $cream;
                 }
             }
         }
@@ -62,12 +64,12 @@ header {
             }
         }
 
-        button {
-            // margin-left: 100px;
-            &:hover {
-                background: $orange;
-                border-color: $orange;
-            }
-        }
+        // button {
+        //     // margin-left: 100px;
+        //     &:hover {
+        //         background: $orange;
+        //         border-color: $orange;
+        //     }
+        // }
     }
 }

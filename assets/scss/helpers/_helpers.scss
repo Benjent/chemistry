@@ -14,13 +14,13 @@
 
 @mixin border ($side, $color) {
     @if $side == top {
-        border-top: solid 4px $color;
+        border-top: solid $border $color;
     } @else if $side == right {
-        border-right: solid 4px $color;
+        border-right: solid $border $color;
     } @else if $side == bottom {
-        border-bottom: solid 4px $color;
+        border-bottom: solid $border $color;
     } @else {
-        border-left: solid 4px $color;
+        border-left: solid $border $color;
     }
 }
 
@@ -39,4 +39,5 @@
 
 body {
     font-family: 'Timmana', sans-serif;
+    color: $cream;
 }
