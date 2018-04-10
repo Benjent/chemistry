@@ -91,8 +91,15 @@ app.post('/signUp', (req, res) => {
 
     let data = {}
 
-    console.log('grosse merde')
-    console.log(dao.getUserByUserName("benjent"))
+    let userName = req.body.userName
+
+    console.log(userName)
+    dao.getUserByUserName(function(err, userName){ 
+        if(err) return res.send(err);       
+        res.user = data;
+        console.log('grosse merde')
+        console.log(data)
+    });
 
     // db.collection('users').findOne({userName: req.body.userName}, function(err, result) {
     //     if (err) throw err;
