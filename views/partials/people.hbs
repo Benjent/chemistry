@@ -1,35 +1,18 @@
 <section id="people">
-    <div class="person">
-        <div class="avatar"></div>
-        <span class="firstName">Benjamin</span>
-        <span class="age">22</span>
-        <span class="county">Côte d'Or</span>
-        <ul class="instruments">
-            <li>Guitar</li>
-            <li>Drums</li>
-        </ul>
-    </div>
-    <div class="person" selected="selected">
-        <div class="avatar"></div>
-        <span class="firstName">Benjamin</span>
-        <span class="age">22</span>
-        <span class="county">Côte d'Or</span>
-        <ul class="instruments">
-            <li>Guitar</li>
-            <li>Drums</li>
-        </ul>
-    </div>
-    <div class="person">
-        <div class="avatar"></div>
-        <span class="firstName">Benjamin</span>
-        <span class="age">22</span>
-        <span class="county">Côte d'Or</span>
-        <ul class="instruments">
-            <li>Guitar</li>
-            <li>Drums</li>
-        </ul>
-    </div>
-    <div class="person">
+    {{#each users}}
+        <div class="person">
+            <div class="avatar"></div>
+            <span class="firstName">{{users.userName}}</span>
+            <span class="age">{{users.birthDate}}</span>
+            <span class="county">{{users.location}}</span>
+            <ul class="instruments">
+            {{#each users.instruments}}
+                    <li>Guitar</li>
+            {{/each}}
+            </ul>
+        </div>
+    {{/each}}
+    {{!-- <div class="person" selected="selected">
         <div class="avatar"></div>
         <span class="firstName">Benjamin</span>
         <span class="age">22</span>
@@ -69,4 +52,24 @@
             <li>Drums</li>
         </ul>
     </div>
+    <div class="person">
+        <div class="avatar"></div>
+        <span class="firstName">Benjamin</span>
+        <span class="age">22</span>
+        <span class="county">Côte d'Or</span>
+        <ul class="instruments">
+            <li>Guitar</li>
+            <li>Drums</li>
+        </ul>
+    </div>
+    <div class="person">
+        <div class="avatar"></div>
+        <span class="firstName">Benjamin</span>
+        <span class="age">22</span>
+        <span class="county">Côte d'Or</span>
+        <ul class="instruments">
+            <li>Guitar</li>
+            <li>Drums</li>
+        </ul>
+    </div> --}}
 </section>
